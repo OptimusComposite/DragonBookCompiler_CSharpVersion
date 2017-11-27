@@ -4,14 +4,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonBookCompilerFrontend-CSharpVersion", "DragonBookCompilerFrontend-CSharpVersion\DragonBookCompilerFrontend-CSharpVersion.csproj", "{F6420B83-02E1-4E2E-A900-D71CA9B1688B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BC90FA3E-4BDA-46BA-9905-8B5A54A0A323} = {BC90FA3E-4BDA-46BA-9905-8B5A54A0A323}
+		{A37C75DA-3169-487F-BE3F-BB3D73131D7F} = {A37C75DA-3169-487F-BE3F-BB3D73131D7F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonBookCompiler.Lexer", "DragonBookCompiler.Lexer\DragonBookCompiler.Lexer.csproj", "{A37C75DA-3169-487F-BE3F-BB3D73131D7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonBookCompiler.Symbols", "DragonBookCompiler.Symbols\DragonBookCompiler.Symbols.csproj", "{47605FED-3FBE-4C94-A200-36D3FB33C056}"
+	ProjectSection(ProjectDependencies) = postProject
+		{66AB0F68-E5D5-4A7A-8931-0D82785D43B0} = {66AB0F68-E5D5-4A7A-8931-0D82785D43B0}
+		{A37C75DA-3169-487F-BE3F-BB3D73131D7F} = {A37C75DA-3169-487F-BE3F-BB3D73131D7F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonBookCompiler.Inter", "DragonBookCompiler.Inter\DragonBookCompiler.Inter.csproj", "{66AB0F68-E5D5-4A7A-8931-0D82785D43B0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A37C75DA-3169-487F-BE3F-BB3D73131D7F} = {A37C75DA-3169-487F-BE3F-BB3D73131D7F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonBookCompiler.Parser", "DragonBookCompiler.Parser\DragonBookCompiler.Parser.csproj", "{BC90FA3E-4BDA-46BA-9905-8B5A54A0A323}"
+	ProjectSection(ProjectDependencies) = postProject
+		{66AB0F68-E5D5-4A7A-8931-0D82785D43B0} = {66AB0F68-E5D5-4A7A-8931-0D82785D43B0}
+		{A37C75DA-3169-487F-BE3F-BB3D73131D7F} = {A37C75DA-3169-487F-BE3F-BB3D73131D7F}
+		{47605FED-3FBE-4C94-A200-36D3FB33C056} = {47605FED-3FBE-4C94-A200-36D3FB33C056}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

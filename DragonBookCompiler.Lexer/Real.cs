@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace DragonBookCompiler.Lexer
 {
-    public class Token
+    public class Real : Token
     {
-        public readonly int tag;
-        public Token(int t)
+        public readonly float Value;
+        public Real(float v) : base(Tag.REAL)
         {
-            tag = t;
+            Value = v;
         }
         public override string ToString()
         {
-            return "" + (char)tag;
+            return "" + Value;
         }
     }
 }
