@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragonBookCompiler.Lexer
+namespace DragonBookCompiler.Generic.Lexer
 {
-    public class Num : Token
+    public class Token
     {
-        public readonly int Value;
-        public Num(int v) : base(Tag.NUM)
+        public readonly int tag;
+        public Token(int t)
         {
-            Value = v;
+            tag = t;
         }
         public override string ToString()
         {
-            return "" + Value;
+            return "" + (char)tag;
         }
     }
 }

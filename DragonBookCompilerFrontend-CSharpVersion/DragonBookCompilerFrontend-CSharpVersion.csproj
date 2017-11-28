@@ -80,15 +80,5 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DragonBookCompiler.Lexer\DragonBookCompiler.Lexer.csproj">
-      <Project>{a37c75da-3169-487f-be3f-bb3d73131d7f}</Project>
-      <Name>DragonBookCompiler.Lexer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DragonBookCompiler.Parser\DragonBookCompiler.Parser.csproj">
-      <Project>{bc90fa3e-4bda-46ba-9905-8b5a54a0a323}</Project>
-      <Name>DragonBookCompiler.Parser</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
