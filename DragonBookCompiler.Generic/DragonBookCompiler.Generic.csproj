@@ -47,11 +47,11 @@
     <Compile Include="Lexer\Token.cs" />
     <Compile Include="Lexer\Word.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Symbols\Type.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Inter\" />
     <Folder Include="Parser\" />
-    <Folder Include="Symbols\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
