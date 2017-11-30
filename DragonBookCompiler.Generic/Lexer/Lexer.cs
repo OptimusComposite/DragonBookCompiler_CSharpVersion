@@ -59,5 +59,101 @@ namespace DragonBookCompiler.Generic.Lexer
             }
         }
 
+        public Token Scan()
+        {
+            try
+            {
+                for (; ; ReadChar())
+                {
+                    if (Peek == ' ' || Peek == '\t')
+                        continue;
+                    else if (Peek == '\n')
+                        Line = Line + 1;
+                    else
+                        break;
+                }
+                switch (Peek)
+                {
+                    case '&':
+                        if (ReadChar('&'))
+                            return Word.and;
+                        else
+                            return new Token('&');
+                    case '|':
+                        if (ReadChar('|'))
+                            return Word.or;
+                        else
+                            return new Token('|');
+                    case '=':
+                        if (ReadChar('='))
+                            return Word.eq;
+                        else
+                            return new Token('=');
+                    case '!':
+                        if (ReadChar('='))
+                            return Word.ne;
+                        else
+                            return new Token('!');
+                    case '<':
+                        if (ReadChar('='))
+                            return Word.le;
+                        else
+                            return new Token('<');
+                    case '>':
+                        if (ReadChar('='))
+                            return Word.ge;
+                        else
+                            return new Token('>');
+                }
+                if (Char.IsDigit(Peek))
+                {
+                    int v = 0;
+                    do
+                    {
+                        v *= 10;
+                        v += Convert.ToInt16(Peek);
+                        ReadChar();
+                    }
+                    while (Char.IsDigit(Peek));
+                    if (Peek != '.')
+                        return new Num(v);
+                    float x = v;
+                    float d = 10;
+                    for (; ; )
+                    {
+                        ReadChar();
+                        if (!Char.IsDigit(Peek)) break;
+                        x += Convert.ToInt16(Peek);
+                        x /= d;
+                        d *= 10;
+                    }
+                    return new Real(x);
+                }
+                if (Char.IsLetter(Peek))
+                {
+                    StringBuilder Sb = new StringBuilder();
+                    do
+                    {
+                        Sb.Append(Peek);
+                        ReadChar();
+                    }
+                    while (Char.IsLetterOrDigit(Peek));
+                    string s = Sb.ToString();
+                    ////Word w = (Word)Words.Values
+                    //foreach (Word w in Words.Values)
+                    //{
+
+                    //}
+                }
+                Token tok = new Token(Peek);
+                Peek = ' ';
+                return tok;
+            }
+            catch
+            {
+                throw new IOException();
+            }
+        }
+
     }
 }

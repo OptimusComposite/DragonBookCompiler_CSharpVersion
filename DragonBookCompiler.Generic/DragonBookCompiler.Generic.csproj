@@ -47,6 +47,8 @@
     <Compile Include="Lexer\Token.cs" />
     <Compile Include="Lexer\Word.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Symbols\Array.cs" />
+    <Compile Include="Symbols\Env.cs" />
     <Compile Include="Symbols\Type.cs" />
   </ItemGroup>
   <ItemGroup>
