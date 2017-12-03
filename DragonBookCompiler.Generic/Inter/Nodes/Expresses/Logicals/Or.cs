@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragonBookCompiler.Generic.Symbols
+namespace DragonBookCompiler.Generic.Inter
 {
-    public class Env
+    public class Or : Logical
     {
     }
 }
