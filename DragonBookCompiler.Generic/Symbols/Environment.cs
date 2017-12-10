@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using DragonBookCompiler.Generic.Lexer;
+using DragonBookCompiler.Generic.Inter;
 
 namespace DragonBookCompiler.Generic.Symbols
 {
@@ -19,9 +20,20 @@ namespace DragonBookCompiler.Generic.Symbols
             Prev = n;
         }
 
-        //public void AddToTable(Token t, Id i)
-        //{
+        public void Put(Token t, Id i)
+        {
+            Table.Add(t, i);
+        }
 
-        //}
+        public Id GetId(Token t)
+        {
+            for (Environment e = this; e != null; e = e.Prev)
+            {
+                Id found = (Id)(e.Table[t]);
+                if (found != null)
+                    return found;
+            }
+            return null;
+        }
     }
 }

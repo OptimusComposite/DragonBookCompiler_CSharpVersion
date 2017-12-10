@@ -8,5 +8,17 @@ namespace DragonBookCompiler.Generic.Inter
 {
     public class Statement : Node
     {
+        public Statement()
+        {
+
+        }
+
+        public static Statement Nul = new Statement();
+        public void Gen(int a, int b)
+        {
+
+        }
+        int After = 0;
+        public static Statement Enclosing = Statement.Nul;
     }
 }
