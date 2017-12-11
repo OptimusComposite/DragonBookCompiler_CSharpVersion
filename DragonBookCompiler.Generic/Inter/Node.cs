@@ -16,7 +16,7 @@ namespace DragonBookCompiler.Generic.Inter
             LexLine = Lexer.Lexer.Line;
         }
 
-        void Error(string s)
+        internal void Error(string s)
         {
             throw new Exception("Near line " + LexLine + ": " + s);
         }
