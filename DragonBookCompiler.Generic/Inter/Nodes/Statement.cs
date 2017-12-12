@@ -18,7 +18,7 @@ namespace DragonBookCompiler.Generic.Inter
         {
 
         }
-        int After = 0;
+        internal int After = 0;
         public static Statement Enclosing = Statement.Nul;
     }
 }
