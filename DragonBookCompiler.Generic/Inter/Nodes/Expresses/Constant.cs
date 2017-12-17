@@ -22,7 +22,7 @@ namespace DragonBookCompiler.Generic.Inter
         public static readonly Constant True    = new Constant(Word.True,   Symbols.Type.Bool);
         public static readonly Constant False   = new Constant(Word.False,  Symbols.Type.Bool);
 
-        public void Jump(int t, int f)
+        public new void Jump(int t, int f)
         {
             if (this == True && t != 0)
             {

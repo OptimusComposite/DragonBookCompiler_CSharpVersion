@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +22,7 @@ namespace DragonBookCompiler.Generic.Inter
                 Error("type error");
         }
 
-        public Symbols.Type check(Symbols.Type p1, Symbols.Type p2)
+        public Type check(Type p1, Type p2)
         {
             if (p1 is Symbols.Array || p2 is Symbols.Array )
                 return null;
@@ -37,8 +36,8 @@ namespace DragonBookCompiler.Generic.Inter
 
         public new void Gen(int b, int a)
         {
-            String s1 = index.Reduce().ToString();
-            String s2 = expr.Reduce().ToString();
+            string s1 = index.Reduce().ToString();
+            string s2 = expr.Reduce().ToString();
             Emit(array.ToString() + " [ " + s1 + " ] = " + s2);
         }
     }

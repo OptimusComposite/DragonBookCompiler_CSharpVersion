@@ -14,6 +14,7 @@ namespace DragonBookCompiler.Generic.Lexer
         public static int Line = 1;
         char Peek = ' ';
         Hashtable Words = new Hashtable();
+
         void Reserve(Word w)
         {
             Words.Add(w.LexElement, w);
@@ -139,11 +140,12 @@ namespace DragonBookCompiler.Generic.Lexer
                     }
                     while (Char.IsLetterOrDigit(Peek));
                     string s = Sb.ToString();
-                    ////Word w = (Word)Words.Values
-                    //foreach (Word w in Words.Values)
-                    //{
-
-                    //}
+                    Word w = (Word)Words[s];
+                    if (w != null)
+                        return w;
+                    w = new Word(s, Tag.ID);
+                    Words.Add(s, w);
+                    return w;
                 }
                 Token tok = new Token(Peek);
                 Peek = ' ';
