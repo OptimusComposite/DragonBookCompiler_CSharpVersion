@@ -33,7 +33,10 @@ namespace DragonBookCompiler.Generic.Parser
 
         void Match(int t)
         {
-
+            if (look.tag == t)
+                Move();
+            else
+                Error("Syntax error.");
         }
 
         public void Program()
