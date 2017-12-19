@@ -8,14 +8,14 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Relation : Logical
+    public class Relation : Logical, ILogical
     {
         public Relation(Token tok, Express x1, Express x2) : base(tok, x1, x2)
         {
 
         }
 
-        public Symbols.Type check(Symbols.Type p1, Symbols.Type p2)
+        public new Symbols.Type check(Symbols.Type p1, Symbols.Type p2)
         {
             if (p1 is Symbols.Array || p2 is Symbols.Array )
                 return null;

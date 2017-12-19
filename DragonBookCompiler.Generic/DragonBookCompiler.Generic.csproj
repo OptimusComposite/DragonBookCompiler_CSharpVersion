@@ -44,6 +44,8 @@
     <Compile Include="Inter\Nodes\Express.cs" />
     <Compile Include="Inter\Nodes\Expresses\Constant.cs" />
     <Compile Include="Inter\Nodes\Expresses\Id.cs" />
+    <Compile Include="Inter\Nodes\Expresses\ILogical.cs" />
+    <Compile Include="Inter\Nodes\Expresses\IOperation.cs" />
     <Compile Include="Inter\Nodes\Expresses\Logical.cs" />
     <Compile Include="Inter\Nodes\Expresses\Logicals\And.cs" />
     <Compile Include="Inter\Nodes\Expresses\Logicals\Not.cs" />

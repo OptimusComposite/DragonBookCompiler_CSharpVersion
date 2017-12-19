@@ -8,7 +8,7 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Unary : Operation
+    public class Unary : Operation, IOperation
     {
         public Express expr;
 

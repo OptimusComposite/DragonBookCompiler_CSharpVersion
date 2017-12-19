@@ -8,7 +8,7 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Access : Operation
+    public class Access : Operation, IOperation
     {
         public Id array;
         public Express index;

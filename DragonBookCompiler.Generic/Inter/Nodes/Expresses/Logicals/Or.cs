@@ -8,7 +8,7 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Or : Logical
+    public class Or : Logical, ILogical
     {
         public Or(Token tok, Express x1, Express x2) : base(tok, x1, x2)
         {
