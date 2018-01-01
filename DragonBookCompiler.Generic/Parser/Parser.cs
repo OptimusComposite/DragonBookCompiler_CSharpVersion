@@ -9,119 +9,106 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Parser
 {
-    public class Parser
+    public class Parser : IParser
     {
-        private Lexer.Lexer lex;
-        private Token look;
-        Symbols.Environment top = null;
-        int used = 0;
-
-        public Parser(Lexer.Lexer l)
+        public Statement Assign()
         {
-            lex = l;
+            throw new NotImplementedException();
         }
 
-        void Move()
+        public void Declare()
         {
-            look = lex.Scan();
+            throw new NotImplementedException();
         }
 
-        void Error(string s)
+        public Statement GetBlock()
         {
-            throw new Exception("Near line " + Lexer.Lexer.Line + ": " + s);
+            throw new NotImplementedException();
         }
 
-        void Match(int t)
+        public Express GetBoolValue()
         {
-            if (look.tag == t)
-                Move();
-            else
-                Error("Syntax error.");
+            throw new NotImplementedException();
+        }
+
+        public Symbols.Type GetDimensions()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetEquality()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetError()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetExpress()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetFactor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetOffset()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetRelativity()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Statement GetSingleStatement()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Statement GetStatements()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetTerm()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetUnary()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express Join()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Match()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Move()
+        {
+            throw new NotImplementedException();
         }
 
         public void Program()
         {
-
+            throw new NotImplementedException();
         }
 
-        Statement GetBlock()
+        Symbols.Type IParser.GetType()
         {
-
-        }
-
-        void GetDecls()
-        {
-
-        }
-
-        Symbols.Type GetType()
-        {
-
-        }
-
-        Symbols.Type Dims()
-        {
-
-        }
-
-        Statement GetStatements()
-        {
-
-        }
-
-        Statement GetStatement()
-        {
-
-        }
-
-        Statement Assign()
-        {
-
-        }
-
-        Express GetBool()
-        {
-
-        }
-
-        Express Join()
-        {
-
-        }
-
-        Express Equals()
-        {
-
-        }
-
-        Express GetRelation()
-        {
-
-        }
-
-        Express GetExpress()
-        {
-
-        }
-
-        Express GetTerm()
-        {
-            
-        }
-
-        Express GetUnary()
-        {
-
-        }
-
-        Express GetFactor()
-        {
-
-        }
-
-        Access Offset()
-        {
-
+            throw new NotImplementedException();
         }
     }
 }

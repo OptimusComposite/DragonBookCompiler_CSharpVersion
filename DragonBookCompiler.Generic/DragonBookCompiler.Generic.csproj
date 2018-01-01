@@ -71,6 +71,7 @@
     <Compile Include="Lexer\Tag.cs" />
     <Compile Include="Lexer\Token.cs" />
     <Compile Include="Lexer\Word.cs" />
+    <Compile Include="Parser\IParser.cs" />
     <Compile Include="Parser\Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Symbols\Array.cs" />
