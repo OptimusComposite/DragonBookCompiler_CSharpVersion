@@ -8,9 +8,9 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class And : Logical, ILogical
+    public class And : Logical
     {
-        public And(Token tok, Express x1, Express x2) : base(tok, x1, x2)
+        public And(DragonToken tok, Express x1, Express x2) : base(tok, x1, x2)
         {
 
         }

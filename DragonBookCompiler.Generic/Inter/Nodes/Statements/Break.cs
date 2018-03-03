@@ -9,18 +9,19 @@ namespace DragonBookCompiler.Generic.Inter
     public class Break : Statement
     {
         Statement stmt;
+
         public Break()
         {
-            if (Statement.Enclosing == Statement.Nul)
+            if (Enclosing == Nul)
             {
-                Error("unenclosed break");
+                PrintError("unenclosed break");
             }
-            stmt = Statement.Enclosing;
+            stmt = Enclosing;
         }
-        public void Gen(int b, int a)
+
+        public new void Generate(int b, int a)
         {
             Emit("Goto L" + stmt.After);
         }
-        
     }
 }

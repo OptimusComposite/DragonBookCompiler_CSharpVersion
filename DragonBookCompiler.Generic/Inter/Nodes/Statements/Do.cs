@@ -22,15 +22,15 @@ namespace DragonBookCompiler.Generic.Inter
         {
             ex = e;
             st = s;
-            if (ex.type != Symbols.Type.Bool)
-                ex.Error("boolean required in Do");
+            if (ex.type != DragonType.Bool)
+                ex.PrintError("boolean required in Do");
         }
 
-        public void Gen(int b, int a)
+        public new void Generate(int b, int a)
         {
             After = a;
             int label = NewLabel();
-            st.Gen(b, label);
+            st.Generate(b, label);
             EmitLabel(label);
             ex.Jump(b, 0);
         }

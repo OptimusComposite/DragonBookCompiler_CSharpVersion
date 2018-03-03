@@ -18,23 +18,23 @@ namespace DragonBookCompiler.Generic.Inter
             array = x.array;
             index = x.index;
             expr = y;
-            if (check(x.type, expr.type) == null)
-                Error("type error");
+            if (Check(x.type, expr.type) == null)
+                PrintError("type error");
         }
 
-        public Type check(Type p1, Type p2)
+        public DragonType Check(DragonType p1, DragonType p2)
         {
-            if (p1 is Symbols.Array || p2 is Symbols.Array )
+            if (p1 is DragonArray || p2 is DragonArray )
                 return null;
             else if (p1 == p2)
                 return p2;
-            else if (Symbols.Type.Numeric(p1) && Symbols.Type.Numeric(p2))
+            else if (DragonType.Numeric(p1) && DragonType.Numeric(p2))
                 return p2;
             else
                 return null;
         }
 
-        public new void Gen(int b, int a)
+        public new void Generate(int b, int a)
         {
             string s1 = index.Reduce().ToString();
             string s2 = expr.Reduce().ToString();

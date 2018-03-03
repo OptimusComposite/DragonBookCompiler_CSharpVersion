@@ -12,24 +12,24 @@ namespace DragonBookCompiler.Generic.Inter
     {
         public Express expr1, expr2;
 
-        public Logical(Token tok, Express x1, Express x2) : base(tok, null)
+        public Logical(DragonToken tok, Express x1, Express x2) : base(tok, null)
         {
             expr1 = x1;
             expr2 = x2;
-            type = check(expr1.type, expr2.type);
+            type = Check(expr1.type, expr2.type);
             if (type == null)
-                Error("type error");
+                PrintError("type error");
         }
 
-        public Symbols.Type check(Symbols.Type p1, Symbols.Type p2)
+        public DragonType Check(DragonType p1, DragonType p2)
         {
-            if (p1 == Symbols.Type.Bool && p2 == Symbols.Type.Bool)
-                return Symbols.Type.Bool;
+            if (p1 == Symbols.DragonType.Bool && p2 == Symbols.DragonType.Bool)
+                return Symbols.DragonType.Bool;
             else
                 return null;
         }
 
-        public new Express Gen()
+        public new Express Generate()
         {
             int f = NewLabel();
             int a = NewLabel();

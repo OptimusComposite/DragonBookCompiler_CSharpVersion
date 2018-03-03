@@ -10,13 +10,13 @@ namespace DragonBookCompiler.Generic.Inter
 {
     public class Operation : Express
     {
-        public Operation(Token tok, Symbols.Type p) : base(tok, p)
+        public Operation(DragonToken tok, Symbols.DragonType p) : base(tok, p)
         {
         }
 
         public new Express Reduce()
         {
-            Express e = Gen();
+            Express e = Generate();
             Temp t = new Temp(type);
             Emit(t.ToString() + " = " + e.ToString());
             return t;

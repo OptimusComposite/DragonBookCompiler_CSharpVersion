@@ -7,12 +7,12 @@ using DragonBookCompiler.Generic.Lexer;
 
 namespace DragonBookCompiler.Generic.Symbols
 {
-    public class Array : Type
+    public class DragonArray : DragonType
     {
-        public Type of;
+        public DragonType of;
         public int size = 1;
 
-        public Array(int sz, Type p) : base("[]", Tag.INDEX, sz * p.Width)
+        public DragonArray(int sz, DragonType p) : base("[]", DragonTag.INDEX, sz * p.Width)
         {
             size = sz;
             of = p;

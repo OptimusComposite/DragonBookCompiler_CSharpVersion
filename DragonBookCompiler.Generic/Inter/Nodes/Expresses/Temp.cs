@@ -13,7 +13,7 @@ namespace DragonBookCompiler.Generic.Inter
         static int count = 0;
         int number = 0;
 
-        public Temp(Symbols.Type p) : base(Word.temp, p)
+        public Temp(DragonType p) : base(DragonWord.temp, p)
         {
             number = ++count;
         }

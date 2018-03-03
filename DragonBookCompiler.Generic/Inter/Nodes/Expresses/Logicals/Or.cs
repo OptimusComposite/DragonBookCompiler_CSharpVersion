@@ -8,14 +8,13 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Or : Logical, ILogical
+    public class Or : Logical
     {
-        public Or(Token tok, Express x1, Express x2) : base(tok, x1, x2)
+        public Or(DragonToken tok, Express x1, Express x2) : base(tok, x1, x2)
         {
 
         }
-
-
+        
         public new void Jump(int t, int f)
         {
             int label = t != 0 ? t : NewLabel();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DragonBookCompiler.Generic.Lexer
 {
-    public static class Tag
+    public static class DragonTag
     {
         public readonly static int AND = 256;
         public readonly static int BASIC = 257;

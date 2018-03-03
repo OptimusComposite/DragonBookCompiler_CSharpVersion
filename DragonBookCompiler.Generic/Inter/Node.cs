@@ -13,23 +13,26 @@ namespace DragonBookCompiler.Generic.Inter
 
         public Node()
         {
-            LexLine = Lexer.Lexer.Line;
+            LexLine = DragonLexer.Line; //TODO
         }
 
-        internal void Error(string s)
+        internal void PrintError(string s)
         {
             throw new Exception("Near line " + LexLine + ": " + s);
         }
 
         static int labels = 0;
+
         public int NewLabel()
         {
             return ++labels;
         }
+
         public string EmitLabel (int i)
         {
             return "L" + i + ": ";
         }
+
         public string Emit(string s)
         {
             return "\t" + s;

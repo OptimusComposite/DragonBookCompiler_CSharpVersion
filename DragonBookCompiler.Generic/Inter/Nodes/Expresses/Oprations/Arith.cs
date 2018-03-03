@@ -8,20 +8,20 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Arith : Operation, IOperation
+    public class Arith : Operation
     {
         public Express expr1, expr2;
 
-        public Arith(Token tok, Express x1, Express x2) : base(tok, null)
+        public Arith(DragonToken tok, Express x1, Express x2) : base(tok, null)
         {
             expr1 = x1;
             expr2 = x2;
-            type = Symbols.Type.Max(expr1.type, expr2.type);
+            type = Symbols.DragonType.Max(expr1.type, expr2.type);
             if (type == null)
-                Error("type error");
+                PrintError("type error");
         }
 
-        public new Express Gen()
+        public new Express Generate()
         {
             return new Arith(Op, expr1.Reduce(), expr2.Reduce());
         }

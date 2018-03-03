@@ -8,19 +8,19 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Relation : Logical, ILogical
+    public class Relation : Logical
     {
-        public Relation(Token tok, Express x1, Express x2) : base(tok, x1, x2)
+        public Relation(DragonToken tok, Express x1, Express x2) : base(tok, x1, x2)
         {
 
         }
 
-        public new Symbols.Type check(Symbols.Type p1, Symbols.Type p2)
+        public new DragonType check(DragonType p1, DragonType p2)
         {
-            if (p1 is Symbols.Array || p2 is Symbols.Array )
+            if (p1 is Symbols.DragonArray || p2 is Symbols.DragonArray )
                 return null;
             else if (p1 == p2)
-                return Symbols.Type.Bool;
+                return Symbols.DragonType.Bool;
             else
                 return null;
         }

@@ -9,30 +9,32 @@ using System.IO;
 
 namespace DragonBookCompiler.Generic.Lexer
 {
-    public class Lexer
+    public class DragonLexer
     {
-        public static int Line = 1;
+        public int Line = 1;
         char Peek = ' ';
         Hashtable Words = new Hashtable();
 
-        void Reserve(Word w)
+        void Reserve(DragonWord w)
         {
             Words.Add(w.LexElement, w);
         }
-        public Lexer()
+
+        public DragonLexer()
         {
-            Reserve(new Word("if",      Tag.IF      ));
-            Reserve(new Word("else",    Tag.ELSE    ));
-            Reserve(new Word("while",   Tag.WHILE   ));
-            Reserve(new Word("do",      Tag.DO      ));
-            Reserve(new Word("break",   Tag.BREAK   ));
-            Reserve(Word.True);
-            Reserve(Word.False);
-            Reserve(Symbols.Type.Int);
-            Reserve(Symbols.Type.Char);
-            Reserve(Symbols.Type.Float);
-            Reserve(Symbols.Type.Bool);
+            Reserve(new DragonWord("if",      DragonTag.IF      ));
+            Reserve(new DragonWord("else",    DragonTag.ELSE    ));
+            Reserve(new DragonWord("while",   DragonTag.WHILE   ));
+            Reserve(new DragonWord("do",      DragonTag.DO      ));
+            Reserve(new DragonWord("break",   DragonTag.BREAK   ));
+            Reserve(DragonWord.True);
+            Reserve(DragonWord.False);
+            Reserve(Symbols.DragonType.Int);
+            Reserve(Symbols.DragonType.Char);
+            Reserve(Symbols.DragonType.Float);
+            Reserve(Symbols.DragonType.Bool);
         }
+
         void ReadChar()
         {
             try
@@ -44,6 +46,7 @@ namespace DragonBookCompiler.Generic.Lexer
                 throw new IOException();
             }
         }
+
         Boolean ReadChar(char c)
         {
             try
@@ -60,7 +63,7 @@ namespace DragonBookCompiler.Generic.Lexer
             }
         }
 
-        public Token Scan()
+        public DragonToken Scan()
         {
             try
             {
@@ -77,34 +80,34 @@ namespace DragonBookCompiler.Generic.Lexer
                 {
                     case '&':
                         if (ReadChar('&'))
-                            return Word.and;
+                            return DragonWord.and;
                         else
-                            return new Token('&');
+                            return new DragonToken('&');
                     case '|':
                         if (ReadChar('|'))
-                            return Word.or;
+                            return DragonWord.or;
                         else
-                            return new Token('|');
+                            return new DragonToken('|');
                     case '=':
                         if (ReadChar('='))
-                            return Word.eq;
+                            return DragonWord.eq;
                         else
-                            return new Token('=');
+                            return new DragonToken('=');
                     case '!':
                         if (ReadChar('='))
-                            return Word.ne;
+                            return DragonWord.ne;
                         else
-                            return new Token('!');
+                            return new DragonToken('!');
                     case '<':
                         if (ReadChar('='))
-                            return Word.le;
+                            return DragonWord.le;
                         else
-                            return new Token('<');
+                            return new DragonToken('<');
                     case '>':
                         if (ReadChar('='))
-                            return Word.ge;
+                            return DragonWord.ge;
                         else
-                            return new Token('>');
+                            return new DragonToken('>');
                 }
                 if (Char.IsDigit(Peek))
                 {
@@ -117,7 +120,7 @@ namespace DragonBookCompiler.Generic.Lexer
                     }
                     while (Char.IsDigit(Peek));
                     if (Peek != '.')
-                        return new Num(v);
+                        return new DragonNumber(v);
                     float x = v;
                     float d = 10;
                     for (; ; )
@@ -128,7 +131,7 @@ namespace DragonBookCompiler.Generic.Lexer
                         x /= d;
                         d *= 10;
                     }
-                    return new Real(x);
+                    return new DragonReal(x);
                 }
                 if (Char.IsLetter(Peek))
                 {
@@ -140,14 +143,14 @@ namespace DragonBookCompiler.Generic.Lexer
                     }
                     while (Char.IsLetterOrDigit(Peek));
                     string s = Sb.ToString();
-                    Word w = (Word)Words[s];
+                    DragonWord w = (DragonWord)Words[s];
                     if (w != null)
                         return w;
-                    w = new Word(s, Tag.ID);
+                    w = new DragonWord(s, DragonTag.ID);
                     Words.Add(s, w);
                     return w;
                 }
-                Token tok = new Token(Peek);
+                DragonToken tok = new DragonToken(Peek);
                 Peek = ' ';
                 return tok;
             }
@@ -156,6 +159,5 @@ namespace DragonBookCompiler.Generic.Lexer
                 throw new IOException();
             }
         }
-
     }
 }

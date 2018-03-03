@@ -8,19 +8,19 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Unary : Operation, IOperation
+    public class Unary : Operation
     {
         public Express expr;
 
-        public Unary(Token tok, Express x) : base(tok, null)
+        public Unary(DragonToken tok, Express x) : base(tok, null)
         {
             expr = x;
-            type = Symbols.Type.Max(Symbols.Type.Int, expr.type);
+            type = Symbols.DragonType.Max(Symbols.DragonType.Int, expr.type);
             if (type == null)
-                Error("type error");
+                PrintError("type error");
         }
 
-        public new Express Gen()
+        public new Express Generate()
         {
             return new Unary(Op, expr.Reduce());
         }

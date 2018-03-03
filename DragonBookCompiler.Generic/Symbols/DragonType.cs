@@ -7,21 +7,21 @@ using DragonBookCompiler.Generic.Lexer;
 
 namespace DragonBookCompiler.Generic.Symbols
 {
-    public class Type : Word
+    public class DragonType : DragonWord
     {
         public int Width = 0;
 
-        public Type(string s, int tag, int w) : base(s, tag)
+        public DragonType(string s, int tag, int w) : base(s, tag)
         {
             Width = w;
         }
 
-        public static readonly Type Int     = new Type("int",   Tag.BASIC, 4),
-                                    Float   = new Type("float", Tag.BASIC, 8),
-                                    Char    = new Type("char",  Tag.BASIC, 1),
-                                    Bool    = new Type("bool",  Tag.BASIC, 1);
+        public static readonly DragonType Int     = new DragonType("int",   DragonTag.BASIC, 4),
+                                    Float   = new DragonType("float", DragonTag.BASIC, 8),
+                                    Char    = new DragonType("char",  DragonTag.BASIC, 1),
+                                    Bool    = new DragonType("bool",  DragonTag.BASIC, 1);
 
-        public static Boolean Numeric (Type p)
+        public static Boolean Numeric (DragonType p)
         {
             if (p == Char || p == Float || p == Int)
                 return true;
@@ -29,7 +29,7 @@ namespace DragonBookCompiler.Generic.Symbols
                 return false;
         }
 
-        public static Type Max(Type p1, Type p2)
+        public static DragonType Max(DragonType p1, DragonType p2)
         {
             if (!(Numeric(p1)) || !(Numeric(p2)))
                 return null;

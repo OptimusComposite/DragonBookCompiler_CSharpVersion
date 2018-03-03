@@ -16,18 +16,18 @@ namespace DragonBookCompiler.Generic.Inter
             st2 = s2;
         }
 
-        public new void Gen(int b, int a)
+        public new void Generate(int b, int a)
         {
             if (st1 == Statement.Nul)
-                st2.Gen(b, a);
+                st2.Generate(b, a);
             else if (st2 == Nul)
-                st1.Gen(b, a);
+                st1.Generate(b, a);
             else
             {
                 int label = NewLabel();
-                st1.Gen(b, label);
+                st1.Generate(b, label);
                 EmitLabel(label);
-                st2.Gen(label, a);
+                st2.Generate(label, a);
             }
         }
     }

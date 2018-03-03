@@ -44,8 +44,6 @@
     <Compile Include="Inter\Nodes\Express.cs" />
     <Compile Include="Inter\Nodes\Expresses\Constant.cs" />
     <Compile Include="Inter\Nodes\Expresses\Id.cs" />
-    <Compile Include="Inter\Nodes\Expresses\ILogical.cs" />
-    <Compile Include="Inter\Nodes\Expresses\IOperation.cs" />
     <Compile Include="Inter\Nodes\Expresses\Logical.cs" />
     <Compile Include="Inter\Nodes\Expresses\Logicals\And.cs" />
     <Compile Include="Inter\Nodes\Expresses\Logicals\Not.cs" />
@@ -65,18 +63,17 @@
     <Compile Include="Inter\Nodes\Statements\Set.cs" />
     <Compile Include="Inter\Nodes\Statements\SetElement.cs" />
     <Compile Include="Inter\Nodes\Statements\While.cs" />
-    <Compile Include="Lexer\Lexer.cs" />
-    <Compile Include="Lexer\Num.cs" />
-    <Compile Include="Lexer\Real.cs" />
-    <Compile Include="Lexer\Tag.cs" />
-    <Compile Include="Lexer\Token.cs" />
-    <Compile Include="Lexer\Word.cs" />
-    <Compile Include="Parser\IParser.cs" />
-    <Compile Include="Parser\Parser.cs" />
+    <Compile Include="Lexer\DragonLexer.cs" />
+    <Compile Include="Lexer\DragonNumber.cs" />
+    <Compile Include="Lexer\DragonReal.cs" />
+    <Compile Include="Lexer\DragonTag.cs" />
+    <Compile Include="Lexer\DragonToken.cs" />
+    <Compile Include="Lexer\DragonWord.cs" />
+    <Compile Include="Parser\DragonParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Symbols\Array.cs" />
-    <Compile Include="Symbols\Environment.cs" />
-    <Compile Include="Symbols\Type.cs" />
+    <Compile Include="Symbols\DragonArray.cs" />
+    <Compile Include="Symbols\DragonEnvironment.cs" />
+    <Compile Include="Symbols\DragonType.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

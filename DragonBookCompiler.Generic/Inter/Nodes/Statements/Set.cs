@@ -17,23 +17,23 @@ namespace DragonBookCompiler.Generic.Inter
         {
             id = i;
             expr = x;
-            if (check(id.type, expr.type) == null)
-                Error("type error");
+            if (Check(id.type, expr.type) == null)
+                PrintError("type error");
         }
 
-        public Symbols.Type check(Symbols.Type p1, Symbols.Type p2)
+        public DragonType Check(DragonType p1, DragonType p2)
         {
-            if (Symbols.Type.Numeric(p1) && Symbols.Type.Numeric(p2))
+            if (DragonType.Numeric(p1) && DragonType.Numeric(p2))
                 return p2;
-            else if (p1 == Symbols.Type.Bool && p2 == Symbols.Type.Bool)
+            else if (p1 == DragonType.Bool && p2 == DragonType.Bool)
                 return p2;
             else
                 return null;
         }
 
-        public new void Gen(int b, int a)
+        public new void Generate(int b, int a)
         {
-            Emit(id.ToString() + " = " + expr.Gen().ToString());
+            Emit(id.ToString() + " = " + expr.Generate().ToString());
         }
     }
 }

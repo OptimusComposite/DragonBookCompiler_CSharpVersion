@@ -8,18 +8,18 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Inter
 {
-    public class Access : Operation, IOperation
+    public class Access : Operation
     {
         public Id array;
         public Express index;
 
-        public Access(Id a, Express i, Symbols.Type p) : base(new Word("[]", Tag.INDEX), p)
+        public Access(Id a, Express i, Symbols.DragonType p) : base(new DragonWord("[]", DragonTag.INDEX), p)
         {
             array = a;
             index = i;
         }
 
-        public new Express Gen()
+        public new Express Generate()
         {
             return new Access(array, index.Reduce(), type);
         }

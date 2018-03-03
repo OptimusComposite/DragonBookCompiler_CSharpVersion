@@ -9,8 +9,19 @@ using DragonBookCompiler.Generic.Symbols;
 
 namespace DragonBookCompiler.Generic.Parser
 {
-    public class Parser : IParser
+    public class DragonParser
     {
+        private DragonLexer lex;
+        private DragonToken look;
+        DragonEnvironment top = null;
+        int used = 0;
+
+        public DragonParser(Lexer.DragonLexer l)
+        {
+            lex = l;
+            Move();
+        }
+
         public Statement Assign()
         {
             throw new NotImplementedException();
@@ -18,12 +29,29 @@ namespace DragonBookCompiler.Generic.Parser
 
         public void Declare()
         {
+            while(look.tag == DragonTag.BASIC)
+            {
+                DragonType p = GetDragonType();
+                DragonToken tok = look;
+                Match(DragonTag.ID);
+                Match(';');
+                Id id = new Id((DragonWord)tok, p , used);
+                top.Put(tok, id);
+                used += p.Width;
+            }
             throw new NotImplementedException();
         }
 
         public Statement GetBlock()
         {
-            throw new NotImplementedException();
+            Match('{');
+            DragonEnvironment savedEnv = top;
+            top = new DragonEnvironment(top);
+            Declare();
+            Statement s = GetStatements();
+            Match('}');
+            top = savedEnv;
+            return s;
         }
 
         public Express GetBoolValue()
@@ -31,7 +59,7 @@ namespace DragonBookCompiler.Generic.Parser
             throw new NotImplementedException();
         }
 
-        public Symbols.Type GetDimensions()
+        public Symbols.DragonType GetDimensions()
         {
             throw new NotImplementedException();
         }
@@ -41,8 +69,9 @@ namespace DragonBookCompiler.Generic.Parser
             throw new NotImplementedException();
         }
 
-        public void GetError()
+        public void PrintError(string s)
         {
+            throw new Exception("Near line: " + lex.Line + ": " + s);
             throw new NotImplementedException();
         }
 
@@ -91,13 +120,22 @@ namespace DragonBookCompiler.Generic.Parser
             throw new NotImplementedException();
         }
 
-        public void Match()
+        public void Match(int t)
         {
+            if (look.tag == t)
+            {
+                Move();
+            }
+            else
+            {
+                PrintError("Syntax error.");
+            }
             throw new NotImplementedException();
         }
 
         public void Move()
         {
+            look = lex.Scan();
             throw new NotImplementedException();
         }
 
@@ -106,7 +144,12 @@ namespace DragonBookCompiler.Generic.Parser
             throw new NotImplementedException();
         }
 
-        Symbols.Type IParser.GetType()
+        DragonType GetDragonType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Express GetOffset(Id id)
         {
             throw new NotImplementedException();
         }

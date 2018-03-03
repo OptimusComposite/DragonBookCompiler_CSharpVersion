@@ -10,16 +10,16 @@ namespace DragonBookCompiler.Generic.Inter
 {
     public class Express : Node
     {
-        public Token Op;
-        public Symbols.Type type;
+        public DragonToken Op;
+        public Symbols.DragonType type;
 
-        public Express (Token tok, Symbols.Type p)
+        public Express (DragonToken tok, Symbols.DragonType p)
         {
             Op = tok;
             type = p;
         }
 
-        public Express Gen()
+        public Express Generate()
         {
             return this;
         }

@@ -11,7 +11,8 @@ namespace DragonBookCompiler.Generic.Inter
     public class Id : Express
     {
         public int offset;
-        public Id(Word id, Symbols.Type p, int b) : base(id, p)
+
+        public Id(DragonWord id, Symbols.DragonType p, int b) : base(id, p)
         {
             offset = b;
         }

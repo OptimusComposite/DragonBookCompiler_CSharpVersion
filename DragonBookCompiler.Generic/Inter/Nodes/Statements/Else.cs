@@ -17,20 +17,20 @@ namespace DragonBookCompiler.Generic.Inter
             ex = e;
             st1 = s1;
             st2 = s2;
-            if (ex.type != Symbols.Type.Bool)
-                ex.Error("Boolean required in if");
+            if (ex.type != Symbols.DragonType.Bool)
+                ex.PrintError("Boolean required in if");
         }
 
-        public new void Gen(int b, int a)
+        public new void Generate(int b, int a)
         {
             int label1 = NewLabel();
             int label2 = NewLabel();
             ex.Jump(0, label2);
             EmitLabel(label1);
-            st1.Gen(label1, a);
+            st1.Generate(label1, a);
             Emit("Goto L" + a);
             EmitLabel(label2);
-            st2.Gen(label2, a);
+            st2.Generate(label2, a);
         }
     }
 }

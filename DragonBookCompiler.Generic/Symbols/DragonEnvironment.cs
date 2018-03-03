@@ -9,25 +9,25 @@ using DragonBookCompiler.Generic.Inter;
 
 namespace DragonBookCompiler.Generic.Symbols
 {
-    public class Environment
+    public class DragonEnvironment
     {
         private Hashtable Table;
-        protected Environment Prev;
+        protected DragonEnvironment Prev;
 
-        public Environment(Environment n)
+        public DragonEnvironment(DragonEnvironment n)
         {
             Table = new Hashtable();
             Prev = n;
         }
 
-        public void Put(Token t, Id i)
+        public void Put(DragonToken t, Id i)
         {
             Table.Add(t, i);
         }
 
-        public Id GetId(Token t)
+        public Id GetId(DragonToken t)
         {
-            for (Environment e = this; e != null; e = e.Prev)
+            for (DragonEnvironment e = this; e != null; e = e.Prev)
             {
                 Id found = (Id)(e.Table[t]);
                 if (found != null)
