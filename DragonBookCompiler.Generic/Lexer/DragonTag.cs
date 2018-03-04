@@ -8,25 +8,25 @@ namespace DragonBookCompiler.Generic.Lexer
 {
     public static class DragonTag
     {
-        public readonly static int AND = 256;
-        public readonly static int BASIC = 257;
-        public readonly static int BREAK = 258;
-        public readonly static int DO = 259;
-        public readonly static int ELSE = 260;
-        public readonly static int EQ = 261;
-        public readonly static int FALSE = 262;
-        public readonly static int GE = 263;
-        public readonly static int ID = 264;
-        public readonly static int IF = 265;
-        public readonly static int INDEX = 266;
-        public readonly static int LE = 267;
-        public readonly static int MINUS = 268;
-        public readonly static int NE = 269;
-        public readonly static int NUM = 270;
-        public readonly static int OR = 271;
-        public readonly static int REAL = 272;
-        public readonly static int TEMP = 273;
-        public readonly static int TRUE = 274;
-        public readonly static int WHILE = 275;
+        public const int AND = 256;
+        public const int BASIC = 257;
+        public const int BREAK = 258;
+        public const int DO = 259;
+        public const int ELSE = 260;
+        public const int EQ = 261;
+        public const int FALSE = 262;
+        public const int GE = 263;
+        public const int ID = 264;
+        public const int IF = 265;
+        public const int INDEX = 266;
+        public const int LE = 267;
+        public const int MINUS = 268;
+        public const int NE = 269;
+        public const int NUM = 270;
+        public const int OR = 271;
+        public const int REAL = 272;
+        public const int TEMP = 273;
+        public const int TRUE = 274;
+        public const int WHILE = 275;
     }
 }

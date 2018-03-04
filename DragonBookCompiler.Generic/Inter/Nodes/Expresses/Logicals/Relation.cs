@@ -15,7 +15,7 @@ namespace DragonBookCompiler.Generic.Inter
 
         }
 
-        public new DragonType check(DragonType p1, DragonType p2)
+        public new DragonType Check(DragonType p1, DragonType p2)
         {
             if (p1 is Symbols.DragonArray || p2 is Symbols.DragonArray )
                 return null;

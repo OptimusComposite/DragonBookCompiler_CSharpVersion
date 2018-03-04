@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DragonBookCompiler.Generic.Lexer;
+using DragonBookCompiler.Generic.Parser;
 
 namespace DragonBookCompilerFrontend_CSharpVersion
 {
@@ -21,6 +23,13 @@ namespace DragonBookCompilerFrontend_CSharpVersion
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox2.Text = richTextBox1.Text;
+        }
+
+        private void PrintResult()
+        {
+            DragonLexer lex = new DragonLexer();
+            DragonParser parser = new DragonParser(lex);
+            parser.Program();
         }
     }
 }

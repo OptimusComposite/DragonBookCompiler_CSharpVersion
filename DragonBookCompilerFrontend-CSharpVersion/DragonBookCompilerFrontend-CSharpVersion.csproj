@@ -80,5 +80,11 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DragonBookCompiler.Generic\DragonBookCompiler.Generic.csproj">
+      <Project>{12f728fd-29d2-4cf9-b103-d032fed84050}</Project>
+      <Name>DragonBookCompiler.Generic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

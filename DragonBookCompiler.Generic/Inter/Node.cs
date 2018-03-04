@@ -11,9 +11,9 @@ namespace DragonBookCompiler.Generic.Inter
     {
         int LexLine = 0;
 
-        public Node()
+        internal Node()
         {
-            LexLine = DragonLexer.Line; //TODO
+            LexLine = DragonLexer.Line;
         }
 
         internal void PrintError(string s)

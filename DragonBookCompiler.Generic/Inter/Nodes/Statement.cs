@@ -24,6 +24,6 @@ namespace DragonBookCompiler.Generic.Inter
 
         internal int After = 0;
 
-        public static Statement Enclosing = Statement.Nul;
+        public static Statement Enclosing = Nul;
     }
 }

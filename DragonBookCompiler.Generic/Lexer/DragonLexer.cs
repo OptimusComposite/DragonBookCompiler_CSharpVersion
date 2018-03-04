@@ -11,7 +11,7 @@ namespace DragonBookCompiler.Generic.Lexer
 {
     public class DragonLexer
     {
-        public int Line = 1;
+        public static int Line = 1;
         char Peek = ' ';
         Hashtable Words = new Hashtable();
 
@@ -39,7 +39,8 @@ namespace DragonBookCompiler.Generic.Lexer
         {
             try
             {
-                Peek = (char)Console.Read();
+                //Peek = (char)Console.Read();
+                
             }
             catch
             {
