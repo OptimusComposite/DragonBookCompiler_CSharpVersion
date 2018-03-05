@@ -45,7 +45,6 @@ namespace DragonBookCompiler.Generic.Parser
             }
             Match(';');
             return statement;
-            throw new NotImplementedException();
         }
 
         private void Declare()
@@ -60,7 +59,6 @@ namespace DragonBookCompiler.Generic.Parser
                 top.Put(tok, id);
                 used += p.Width;
             }
-            throw new NotImplementedException();
         }
 
         private Statement GetBlock()
@@ -98,7 +96,6 @@ namespace DragonBookCompiler.Generic.Parser
                 p = GetDimensions(p);
             }
             return new DragonArray(((DragonNumber)tok).Value, p);
-            throw new NotImplementedException();
         }
 
         private Express GetEquality()
@@ -116,7 +113,6 @@ namespace DragonBookCompiler.Generic.Parser
         private void PrintError(string s)
         {
             throw new Exception("Near line: " + DragonLexer.Line + ": " + s);
-            throw new NotImplementedException();
         }
 
         private Express GetExpress()
@@ -183,7 +179,6 @@ namespace DragonBookCompiler.Generic.Parser
                     PrintError("Syntax error.");
                     return x;
             }
-            throw new NotImplementedException();
         }
 
         private Express GetRelativity()
@@ -222,7 +217,7 @@ namespace DragonBookCompiler.Generic.Parser
                     x = GetBoolExpress();
                     Match(')');
                     s1 = GetSingleStatement();
-                    if(look.tag != DragonTag.ELSE)
+                    if (look.tag != DragonTag.ELSE)
                     {
                         return new If(x, s1);
                     }
@@ -269,10 +264,6 @@ namespace DragonBookCompiler.Generic.Parser
                 default:
                     return Assign();
             }
-
-
-
-            throw new NotImplementedException();
         }
 
         private Statement GetStatements()
@@ -285,7 +276,6 @@ namespace DragonBookCompiler.Generic.Parser
             {
                 return new Sequence(GetSingleStatement(), GetStatements());
             }
-            throw new NotImplementedException();
         }
 
         private Express GetTerm()
@@ -298,7 +288,6 @@ namespace DragonBookCompiler.Generic.Parser
                 x = new Arith(tok, x, GetUnary());
             }
             return x;
-            throw new NotImplementedException();
         }
 
         private Express GetUnary()
@@ -318,7 +307,6 @@ namespace DragonBookCompiler.Generic.Parser
             {
                 return GetFactor();
             }
-            throw new NotImplementedException();
         }
 
         private Express Join()
@@ -343,13 +331,11 @@ namespace DragonBookCompiler.Generic.Parser
             {
                 PrintError("Syntax error.");
             }
-            throw new NotImplementedException();
         }
 
         private void Move()
         {
             look = lex.Scan();
-            throw new NotImplementedException();
         }
 
         public void Program()
@@ -374,7 +360,6 @@ namespace DragonBookCompiler.Generic.Parser
             {
                 return GetDimensions(p);
             }
-            throw new NotImplementedException();
         }
 
         private Access GetOffset(Id a)
@@ -402,7 +387,7 @@ namespace DragonBookCompiler.Generic.Parser
                 t2 = new Arith(new DragonToken('+'), loc, t1);
                 loc = t2;
             }
-            throw new NotImplementedException();
+            return new Access(a, loc, type);
         }
     }
 }

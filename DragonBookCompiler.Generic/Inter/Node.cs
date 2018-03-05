@@ -28,9 +28,9 @@ namespace DragonBookCompiler.Generic.Inter
             return ++labels;
         }
 
-        public string EmitLabel (int i)
+        public void EmitLabel (int i)
         {
-            return "L" + i + ": ";
+            Console.WriteLine( "L" + i + ": ");
         }
 
         public string Emit(string s)

@@ -39,8 +39,8 @@ namespace DragonBookCompiler.Generic.Lexer
         {
             try
             {
-                //Peek = (char)Console.Read();
-                
+                Peek = (char)Console.Read();
+
             }
             catch
             {
