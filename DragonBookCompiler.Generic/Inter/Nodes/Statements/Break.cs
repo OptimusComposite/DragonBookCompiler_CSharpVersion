@@ -21,7 +21,7 @@ namespace DragonBookCompiler.Generic.Inter
 
         public new void Generate(int b, int a)
         {
-            Emit("Goto L" + stmt.After);
+            EmitStatement("Goto L" + stmt.After);
         }
     }
 }

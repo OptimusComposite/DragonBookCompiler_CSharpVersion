@@ -18,7 +18,8 @@ namespace DragonBookCompiler.Generic.Inter
 
         internal void PrintError(string s)
         {
-            throw new Exception("Near line " + LexLine + ": " + s);
+            //throw new Exception("Near line " + LexLine + ": " + s);
+            Console.WriteLine("Near line " + LexLine + ": " + s);
         }
 
         static int labels = 0;
@@ -33,7 +34,7 @@ namespace DragonBookCompiler.Generic.Inter
             Console.WriteLine( "L" + i + ": ");
         }
 
-        public string Emit(string s)
+        public string EmitStatement(string s)
         {
             return "\t" + s;
         }

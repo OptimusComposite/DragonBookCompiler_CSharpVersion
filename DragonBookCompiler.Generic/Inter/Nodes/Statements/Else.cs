@@ -28,7 +28,7 @@ namespace DragonBookCompiler.Generic.Inter
             ex.Jump(0, label2);
             EmitLabel(label1);
             st1.Generate(label1, a);
-            Emit("Goto L" + a);
+            EmitStatement("Goto L" + a);
             EmitLabel(label2);
             st2.Generate(label2, a);
         }

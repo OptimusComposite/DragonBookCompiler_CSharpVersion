@@ -33,7 +33,7 @@ namespace DragonBookCompiler.Generic.Inter
 
         public new void Generate(int b, int a)
         {
-            Emit(id.ToString() + " = " + expr.Generate().ToString());
+            EmitStatement(id.ToString() + " = " + expr.Generate().ToString());
         }
     }
 }

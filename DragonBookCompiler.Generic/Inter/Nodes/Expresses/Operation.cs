@@ -18,7 +18,7 @@ namespace DragonBookCompiler.Generic.Inter
         {
             Express e = Generate();
             Temp t = new Temp(type);
-            Emit(t.ToString() + " = " + e.ToString());
+            EmitStatement(t.ToString() + " = " + e.ToString());
             return t;
         }
     }

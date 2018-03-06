@@ -38,7 +38,7 @@ namespace DragonBookCompiler.Generic.Inter
         {
             string s1 = index.Reduce().ToString();
             string s2 = expr.Reduce().ToString();
-            Emit(array.ToString() + " [ " + s1 + " ] = " + s2);
+            EmitStatement(array.ToString() + " [ " + s1 + " ] = " + s2);
         }
     }
 }

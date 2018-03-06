@@ -26,11 +26,11 @@ namespace DragonBookCompiler.Generic.Inter
         {
             if (this == True && t != 0)
             {
-                Emit("Goto L" + t);
+                EmitStatement("Goto L" + t);
             }
             else if (this == False && f != 0)
             {
-                Emit("Goto L" + f);
+                EmitStatement("Goto L" + f);
             }
         }
     }

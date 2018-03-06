@@ -33,7 +33,7 @@ namespace DragonBookCompiler.Generic.Inter
             int label = NewLabel();   // label for stmt
             EmitLabel(label);
             stmt.Generate(label, b);
-            Emit("goto L" + b);
+            EmitStatement("goto L" + b);
         }
     }
 }

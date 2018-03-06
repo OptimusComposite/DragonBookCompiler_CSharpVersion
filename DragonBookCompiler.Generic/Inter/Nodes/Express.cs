@@ -33,16 +33,16 @@ namespace DragonBookCompiler.Generic.Inter
         {
             if (t != 0 && f != 0)
             {
-                Emit("If " + test + " Goto L" + t);
-                Emit("Goto L" + f);
+                EmitStatement("If " + test + " Goto L" + t);
+                EmitStatement("Goto L" + f);
             }
             else if (t != 0)
             {
-                Emit("If " + test + " Goto L" + t);
+                EmitStatement("If " + test + " Goto L" + t);
             }
             else if (f != 0)
             {
-                Emit("IfFalse " + test + " Goto L" + f);
+                EmitStatement("IfFalse " + test + " Goto L" + f);
             }
         }
 

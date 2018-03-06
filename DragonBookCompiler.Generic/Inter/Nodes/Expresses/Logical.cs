@@ -35,10 +35,10 @@ namespace DragonBookCompiler.Generic.Inter
             int a = NewLabel();
             Temp t = new Temp(type);
             this.Jump(0, f);
-            Emit(t.ToString() + " = true");
-            Emit("Goto L" + a);
+            EmitStatement(t.ToString() + " = true");
+            EmitStatement("Goto L" + a);
             EmitLabel(f);
-            Emit(t.ToString() + " = false");
+            EmitStatement(t.ToString() + " = false");
             EmitLabel(a);
             return t;
         }
