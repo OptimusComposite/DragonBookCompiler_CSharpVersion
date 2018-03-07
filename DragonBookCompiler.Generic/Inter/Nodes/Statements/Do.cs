@@ -26,7 +26,7 @@ namespace DragonBookCompiler.Generic.Inter
                 ex.PrintError("boolean required in Do");
         }
 
-        public new void Generate(int b, int a)
+        public override void Generate(int b, int a)
         {
             After = a;
             int label = NewLabel();

@@ -21,7 +21,7 @@ namespace DragonBookCompiler.Generic.Inter
                 PrintError("type error");
         }
 
-        public new Express Generate()
+        public override Express Generate()
         {
             return new Arith(Op, expr1.Reduce(), expr2.Reduce());
         }

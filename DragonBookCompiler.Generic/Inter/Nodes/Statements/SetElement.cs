@@ -34,7 +34,7 @@ namespace DragonBookCompiler.Generic.Inter
                 return null;
         }
 
-        public new void Generate(int b, int a)
+        public override void Generate(int b, int a)
         {
             string s1 = index.Reduce().ToString();
             string s2 = expr.Reduce().ToString();

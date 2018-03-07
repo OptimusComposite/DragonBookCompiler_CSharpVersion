@@ -29,7 +29,7 @@ namespace DragonBookCompiler.Generic.Inter
                 return null;
         }
 
-        public new Express Generate()
+        public override Express Generate()
         {
             int f = NewLabel();
             int a = NewLabel();

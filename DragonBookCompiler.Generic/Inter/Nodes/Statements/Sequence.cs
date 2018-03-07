@@ -16,9 +16,9 @@ namespace DragonBookCompiler.Generic.Inter
             st2 = s2;
         }
 
-        public new void Generate(int b, int a)
+        public override void Generate(int b, int a)
         {
-            if (st1 == Statement.Nul)
+            if (st1 == Nul)
                 st2.Generate(b, a);
             else if (st2 == Nul)
                 st1.Generate(b, a);

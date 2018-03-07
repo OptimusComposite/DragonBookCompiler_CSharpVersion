@@ -20,7 +20,7 @@ namespace DragonBookCompiler.Generic.Inter
                 PrintError("type error");
         }
 
-        public new Express Generate()
+        public override Express Generate()
         {
             return new Unary(Op, expr.Reduce());
         }

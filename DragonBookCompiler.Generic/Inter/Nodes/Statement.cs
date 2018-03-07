@@ -17,7 +17,7 @@ namespace DragonBookCompiler.Generic.Inter
 
         public static Statement Nul = new Statement();
 
-        public void Generate(int a, int b)
+        public virtual void Generate(int a, int b)
         {
 
         }

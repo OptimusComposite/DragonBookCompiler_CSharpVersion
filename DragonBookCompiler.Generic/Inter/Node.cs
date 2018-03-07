@@ -34,9 +34,9 @@ namespace DragonBookCompiler.Generic.Inter
             Console.WriteLine( "L" + i + ": ");
         }
 
-        public string EmitStatement(string s)
+        public void EmitStatement(string s)
         {
-            return "\t" + s;
+            Console.WriteLine("\t" + s);
         }
     }
 }

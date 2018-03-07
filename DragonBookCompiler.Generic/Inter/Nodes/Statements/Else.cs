@@ -21,7 +21,7 @@ namespace DragonBookCompiler.Generic.Inter
                 ex.PrintError("Boolean required in if");
         }
 
-        public new void Generate(int b, int a)
+        public override void Generate(int b, int a)
         {
             int label1 = NewLabel();
             int label2 = NewLabel();

@@ -19,7 +19,7 @@ namespace DragonBookCompiler.Generic.Inter
             stmt = Enclosing;
         }
 
-        public new void Generate(int b, int a)
+        public override void Generate(int b, int a)
         {
             EmitStatement("Goto L" + stmt.After);
         }

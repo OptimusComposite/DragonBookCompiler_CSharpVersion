@@ -19,7 +19,7 @@ namespace DragonBookCompiler.Generic.Inter
             type = p;
         }
 
-        public Express Generate()
+        public virtual Express Generate()
         {
             return this;
         }

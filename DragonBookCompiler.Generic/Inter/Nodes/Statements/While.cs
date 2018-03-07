@@ -26,7 +26,7 @@ namespace DragonBookCompiler.Generic.Inter
                 expr.PrintError("boolean required in while");
         }
 
-        public new void Generate(int b, int a)
+        public override void Generate(int b, int a)
         {
             After = a;                // save label a
             expr.Jump(0, a);

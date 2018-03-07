@@ -31,7 +31,7 @@ namespace DragonBookCompiler.Generic.Inter
                 return null;
         }
 
-        public new void Generate(int b, int a)
+        public override void Generate(int b, int a)
         {
             EmitStatement(id.ToString() + " = " + expr.Generate().ToString());
         }

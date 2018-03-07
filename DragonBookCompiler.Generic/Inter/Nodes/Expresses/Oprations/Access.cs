@@ -13,13 +13,13 @@ namespace DragonBookCompiler.Generic.Inter
         public Id array;
         public Express index;
 
-        public Access(Id a, Express i, Symbols.DragonType p) : base(new DragonWord("[]", DragonTag.INDEX), p)
+        public Access(Id a, Express i, DragonType p) : base(new DragonWord("[]", DragonTag.INDEX), p)
         {
             array = a;
             index = i;
         }
 
-        public new Express Generate()
+        public override Express Generate()
         {
             return new Access(array, index.Reduce(), type);
         }
