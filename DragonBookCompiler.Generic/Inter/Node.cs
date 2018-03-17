@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DragonBookCompiler.Generic.Lexer;
+using DragonBookCompiler.Generic.IO;
 
 namespace DragonBookCompiler.Generic.Inter
 {
@@ -19,7 +20,9 @@ namespace DragonBookCompiler.Generic.Inter
         internal void PrintError(string s)
         {
             //throw new Exception("Near line " + LexLine + ": " + s);
-            Console.WriteLine("Near line " + LexLine + ": " + s);
+            //Console.WriteLine("Near line " + LexLine + ": " + s);
+            InputAndOutput.ErrorText.Append("Near line " + LexLine + ": " + s);
+            InputAndOutput.ErrorText.AppendLine();
         }
 
         static int labels = 0;
@@ -31,12 +34,16 @@ namespace DragonBookCompiler.Generic.Inter
 
         public void EmitLabel (int i)
         {
-            Console.WriteLine( "L" + i + ": ");
+            //Console.WriteLine( "L" + i + ": ");
+            InputAndOutput.OutputText.Append("L" + i + ": ");
+            InputAndOutput.OutputText.AppendLine();
         }
 
         public void EmitStatement(string s)
         {
-            Console.WriteLine("\t" + s);
+            //Console.WriteLine("\t" + s);
+            InputAndOutput.OutputText.Append("\t" + s);
+            InputAndOutput.OutputText.AppendLine();
         }
     }
 }

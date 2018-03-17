@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DragonBookCompiler.Generic.Inter;
 using DragonBookCompiler.Generic.Lexer;
 using DragonBookCompiler.Generic.Symbols;
+using DragonBookCompiler.Generic.IO;
 
 namespace DragonBookCompiler.Generic.Parser
 {

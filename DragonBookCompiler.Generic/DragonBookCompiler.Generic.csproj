@@ -63,6 +63,7 @@
     <Compile Include="Inter\Nodes\Statements\Set.cs" />
     <Compile Include="Inter\Nodes\Statements\SetElement.cs" />
     <Compile Include="Inter\Nodes\Statements\While.cs" />
+    <Compile Include="IO\InputAndOutput.cs" />
     <Compile Include="Lexer\DragonLexer.cs" />
     <Compile Include="Lexer\DragonNumber.cs" />
     <Compile Include="Lexer\DragonReal.cs" />

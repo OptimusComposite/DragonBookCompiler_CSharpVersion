@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using DragonBookCompiler.Generic.Symbols;
 using System.IO;
+using DragonBookCompiler.Generic.IO;
 
 namespace DragonBookCompiler.Generic.Lexer
 {
@@ -14,6 +15,7 @@ namespace DragonBookCompiler.Generic.Lexer
         public static int Line = 1;
         char Peek = ' ';
         Hashtable Words = new Hashtable();
+        StringReader inputText = new StringReader(InputAndOutput.InputText);
 
         void Reserve(DragonWord w)
         {
@@ -39,8 +41,8 @@ namespace DragonBookCompiler.Generic.Lexer
         {
             try
             {
-                Peek = (char)Console.Read();
-
+                //Peek = (char)Console.Read();
+                Peek = (char)inputText.Read();
             }
             catch
             {
