@@ -113,7 +113,9 @@ namespace DragonBookCompiler.Generic.Parser
 
         private void PrintError(string s)
         {
-            throw new Exception("Near line: " + DragonLexer.Line + ": " + s);
+            //throw new Exception("Near line: " + DragonLexer.Line + ": " + s);
+            InputAndOutput.ErrorText.Append("Near line: " + DragonLexer.Line + ": " + s);
+            InputAndOutput.ErrorText.AppendLine();
         }
 
         private Express GetExpress()
@@ -363,6 +365,8 @@ namespace DragonBookCompiler.Generic.Parser
             }
         }
 
+
+        //fix null reference exception
         private Access GetOffset(Id a)
         {
             Express i;

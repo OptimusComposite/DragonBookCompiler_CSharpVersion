@@ -23,10 +23,13 @@ namespace DragonBookCompilerFrontend_CSharpVersion
         private void button1_Click(object sender, EventArgs e)
         {
             InputAndOutput.InputText = richTextBox1.Text;
+            InputAndOutput.OutputText.Clear();
+            InputAndOutput.ErrorText.Clear();
             DragonLexer lex = new DragonLexer();
             DragonParser par = new DragonParser(lex);
             par.Program();
             richTextBox2.Text = InputAndOutput.OutputText.ToString();
+            richTextBox3.Text = InputAndOutput.ErrorText.ToString();
         }
 
         //private void PrintResult()

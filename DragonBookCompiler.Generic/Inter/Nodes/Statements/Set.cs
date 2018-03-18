@@ -23,7 +23,7 @@ namespace DragonBookCompiler.Generic.Inter
 
         public DragonType Check(DragonType p1, DragonType p2)
         {
-            if (DragonType.Numeric(p1) && DragonType.Numeric(p2))
+            if (DragonType.IsNumeric(p1) && DragonType.IsNumeric(p2))
                 return p2;
             else if (p1 == DragonType.Bool && p2 == DragonType.Bool)
                 return p2;

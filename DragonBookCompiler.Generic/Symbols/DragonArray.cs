@@ -17,7 +17,7 @@ namespace DragonBookCompiler.Generic.Symbols
             size = sz;
             of = p;
         }
-        public override string ToString()
+        public new string ToString()
         {
             return "[" + size + "]" + of.ToString();
         }

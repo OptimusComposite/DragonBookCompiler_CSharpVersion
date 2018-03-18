@@ -28,7 +28,7 @@ namespace DragonBookCompiler.Generic.Inter
                 return null;
             else if (p1 == p2)
                 return p2;
-            else if (DragonType.Numeric(p1) && DragonType.Numeric(p2))
+            else if (DragonType.IsNumeric(p1) && DragonType.IsNumeric(p2))
                 return p2;
             else
                 return null;

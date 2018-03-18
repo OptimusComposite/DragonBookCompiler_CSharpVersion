@@ -21,7 +21,7 @@ namespace DragonBookCompiler.Generic.Symbols
                                     Char    = new DragonType("char",  DragonTag.BASIC, 1),
                                     Bool    = new DragonType("bool",  DragonTag.BASIC, 1);
 
-        public static Boolean Numeric (DragonType p)
+        public static Boolean IsNumeric (DragonType p)
         {
             if (p == Char || p == Float || p == Int)
                 return true;
@@ -31,7 +31,7 @@ namespace DragonBookCompiler.Generic.Symbols
 
         public static DragonType Max(DragonType p1, DragonType p2)
         {
-            if (!(Numeric(p1)) || !(Numeric(p2)))
+            if (!(IsNumeric(p1)) || !(IsNumeric(p2)))
                 return null;
             else if (p1 == Float || p2 == Float)
                 return Float;

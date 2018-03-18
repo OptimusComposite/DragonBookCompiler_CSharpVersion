@@ -15,9 +15,9 @@ namespace DragonBookCompiler.Generic.Lexer
             Value = v;
         }
 
-        public override string ToString()
+        public new string ToString()
         {
-            return "" + Value;
+            return ("" + Value);
         }
     }
 }

@@ -15,9 +15,9 @@ namespace DragonBookCompiler.Generic.Lexer
             tag = t;
         }
 
-        public override string ToString()
+        public new string ToString()
         {
-            return "" + (char)tag;
+            return ("" + (char)tag);
         }
     }
 }

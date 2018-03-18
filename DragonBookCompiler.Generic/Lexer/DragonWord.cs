@@ -15,7 +15,7 @@ namespace DragonBookCompiler.Generic.Lexer
             LexElement = s;
         }
 
-        public override string ToString()
+        public new string ToString()
         {
             return LexElement;
         }
